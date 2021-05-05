@@ -1,0 +1,195 @@
+
+html{
+    overflow: hidden;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.App {
+    display: flex;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+#container-place{
+    box-shadow: rgba(189, 186, 186, 0.3) 5px 1px 5px;
+    height: 100vh;
+    width: 40%;
+}
+.sub-container-place{
+    padding-bottom: 10px;
+}
+
+.place-image img{
+    width: 100%;
+    height: auto;
+}
+
+.nearby-content {
+    margin: 0 auto;
+}
+#nearby-box {
+    margin: 0 auto;
+    justify-content: center;
+}
+.nearby {
+   cursor: pointer;
+   margin-bottom: 5px;
+   border: 1px solid gainsboro;
+   max-width: 220px;
+   min-width: 200px;
+}
+.nearby .text-content {
+    padding: 5px 5px;
+}
+.nearby-image{
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.nearby .rating {
+    font-weight: 700;
+}
+@supports(object-fit: cover){
+    .nearby-image img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .place-image img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+.showButton, .icon-color{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+
+/* nearby  */
+.scroll{
+    overflow-y: scroll;
+    height: 45vh;
+    padding: 0;
+}
+.search-nearby {
+    margin: 10px 10px;
+    max-width: 250px;
+    background-color: cornflowerblue;
+}
+
+
+/*  Map  */
+#map{
+    height: 400px; 
+    width: 100%;
+}
+#box-map{
+    margin-top: 30px;
+    height: 400px;
+}
+#container-map {
+    width: 60%;
+}
+.main-input{
+    justify-content: center;
+    display: flex;
+}
+.options-input{
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    top: -390px;
+    margin: 0 auto;
+    z-index: 10;
+    width: 50%;
+}
+.inputSearch{
+    height: 40px ;
+    width: 240px;
+    padding: 5px;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+}
+#searchIcon{
+    width: 40px;
+    height: 40px;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    cursor: pointer;
+}
+.icon-color{
+    background-color: cornflowerblue;
+}
+#mode{
+    margin-left: 20px;
+    border: 0;  
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    cursor: pointer;
+}
+
+.km {
+    position: absolute;
+    left: 84%;
+    right: 0;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width:1366px) {
+    
+    html{
+      overflow: scroll;
+    }
+
+    #container-place, #container-map{
+        box-sizing: content-box;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        box-shadow: rgba(189, 186, 186, 0.3) 2px 4px 5px;
+    }
+    .App {
+        display: block;
+        max-width: 95%;
+    }
+    #searchPlace{
+        width: inherit;
+    }
+    .scroll{
+        overflow-y: hidden;
+        height: auto;
+    }
+
+    #map, #box-map{
+        width: inherit;
+        height: 300px; 
+    }
+    .options-input{
+        display: flex;
+        top: -50px;
+        margin: -10px;
+        width: 80%;
+    }
+    #puntoPartida{
+        width: 100px;
+    }
+}
+
+@media (min-width:575px) and (max-width:1366px){
+    .main-input{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .App{
+        width: 80%;
+    }
+}
